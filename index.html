@@ -1,135 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/style.css" type="text/css" media="all" />
+		<link
+			rel="stylesheet"
+			href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+		/>
+		<title>Support Assistant System</title>
+	</head>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap"
-            rel="stylesheet" />
-        <link rel="stylesheet" href="/style.css" type="text/css" media="all">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-        <title>Support Assistant System</title>
-    </head>
+	<body>
+		<div class="help_nav">
+			<div class="container">
+				<div class="menu">
+					<span style="font-size: 40px; cursor: pointer" onclick="openNav()"
+						>&#9776;</span
+					>
+				</div>
+				<div id="navigation" class="overlay">
+					<a href="javascript:void(0)" class="close" onclick="closeNav()"
+						>&times;</a
+					>
+					<div class="helpContent">
+						<h1 class="HelpTitle">Help Section</h1>
+						<table class="table tg">
+							<thead>
+								<tr>
+									<th class="tg-0lax">Action</th>
+									<th class="tg-0lax">Command</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="tg-0lax">Email<br /></td>
+									<td class="tg-0lax">
+										"Check email", "Login to email address", "Open email"
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Grades and Progression</td>
+									<td class="tg-0lax">
+										"View grades", "Check progression", "Show me my course
+										progress."
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Unihub</td>
+									<td class="tg-0lax">
+										"Login to unihub", "Open my learning", "Open university
+										website"
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Exam Timetable</td>
+									<td class="tg-0lax">"View exams period", "Timetable"</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Extenuating circumstances</td>
+									<td class="tg-0lax">
+										"How to obtain an extension?", "Extend my deadline",
+										"Assessment extension"
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Useful websites</td>
+									<td class="tg-0lax">
+										"Learn programming online", "Best programming sites",
+										"Recommend site to learn coding"
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Help section</td>
+									<td class="tg-0lax">
+										"Open help section", "I need help", "Open navigation"
+									</td>
+								</tr>
+								<tr>
+									<td class="tg-0lax">Stop recording</td>
+									<td class="tg-0lax">
+										"Stop", "Stop microphone", "Stop listening"
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="heading">
+			<h1 class="title">
+				<img src="/Assets/bot.png" alt="" srcset="" />
+				Support Assistant System
+			</h1>
+		</div>
+		<div class="about">
+			<p>
+				The support system is designed for Computer Science students to access
+				information relevant to their study and to their university life.
+			</p>
+			<br />
+			<div id="mic">
+				<img src="/Assets/microphone(2).png" alt="" srcset="" />
+				<p>Click on the icon to activate voice commands</p>
+			</div>
+			<div id="waves">
+				<div class="loader">
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+					<span class="stroke"></span>
+				</div>
+				<p>Click on the icon to deactivate voice commands</p>
+			</div>
+		</div>
+		<div class="chatContainer" id="scrollBox">
+			<div class="imessage">
+				<p class="from-them margin-b_one">
+					Hey👋, I'm your Support System assistant - at your service 24/7.<br />
+					How may i help you today? <br />
+					<i class="uil uil-asterisk"></i>Open mail<br />
+					<i class="uil uil-asterisk"></i>View grades and progression<br />
+					<i class="uil uil-asterisk"></i>Check exam timetable<br />
+					<i class="uil uil-asterisk"></i>Login to MyLearning Unihub<br />
+					<i class="uil uil-asterisk"></i>Check coursework deadlines<br />
+					<i class="uil uil-asterisk"></i>Links to learn and practice coding<br />
+					<i class="uil uil-asterisk"></i>Check how to do references <br />
+				</p>
+			</div>
+		</div>
+		<script>
+			function openNav() {
+				document.getElementById("navigation").style.width = "100%";
+			}
 
-    <body>
-        <div class="help_nav">
-            <div class="container">
-                <div class="menu">
-                    <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
-                </div>
-                <div id="navigation" class="overlay">
-                    <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
-                    <div class="helpContent">
-                        <h1 class="HelpTitle">Help Section</h1>
-                        <table class="table tg">
-                            <thead>
-                                <tr>
-                                    <th class="tg-0lax">Action</th>
-                                    <th class="tg-0lax">Command</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="tg-0lax">Email<br></td>
-                                    <td class="tg-0lax">"Check email", "Login to email address", "Open email"</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Grades and Progression</td>
-                                    <td class="tg-0lax">"View grades", "Check progression", "Show me my course
-                                        progress."</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Unihub</td>
-                                    <td class="tg-0lax">"Login to unihub", "Open my learning", "Open university website"
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Exam Timetable</td>
-                                    <td class="tg-0lax">"View exams period", "Timetable"</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Extenuating circumstances</td>
-                                    <td class="tg-0lax">"How to obtain an extension?", "Extend my deadline", "Assessment
-                                        extension"</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Useful websites</td>
-                                    <td class="tg-0lax">"Learn programming online", "Best programming sites", "Recommend
-                                        site to learn coding"</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Help section</td>
-                                    <td class="tg-0lax">"Open help section", "I need help", "Open navigation"</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0lax">Stop recording</td>
-                                    <td class="tg-0lax">"Stop", "Stop microphone", "Stop listening"</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="heading">
-            <h1 class="title">
-                <img src="/Assets/bot.png" alt="" srcset="">
-                Support Assistant System
-            </h1>
-        </div>
-        <div class="about">
-            <p>
-                The support system is designed for Computer Science students to access information relevant to their
-                study and to their university life.
-            </p>
-            <br />
-            <div id="mic">
-                <img src="/Assets/microphone(2).png" alt="" srcset="">
-                <p>Click on the icon to activate voice commands</p>
-            </div>
-            <div id="waves">
-                <div class="loader">
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                    <span class="stroke"></span>
-                </div>
-                <p>Click on the icon to deactivate voice commands</p>
-            </div>
-        </div>
-        <div class="chatContainer" id="scrollBox">
-            <div class="imessage">
-                <p class=" from-them margin-b_one">Hey👋, I'm your Support System assistant - at your service 24/7.<br>
-                    How may i help you today? <br>
-                    <i class="uil uil-asterisk"></i>Open mail<br>
-                    <i class="uil uil-asterisk"></i>View grades and progression<br>
-                    <i class="uil uil-asterisk"></i>Check exam timetable<br>
-                    <i class="uil uil-asterisk"></i>Login to MyLearning Unihub<br>
-                    <i class="uil uil-asterisk"></i>Check coursework deadlines<br>
-                    <i class="uil uil-asterisk"></i>Links to learn and practice coding<br>
-                    <i class="uil uil-asterisk"></i>Check how to do references <br>
-                </p>
-            </div>
-        </div>
-        <script>
-            function openNav() {
-                document.getElementById("navigation").style.width = "100%";
-            }
+			function closeNav() {
+				document.getElementById("navigation").style.width = "0%";
+			}
+		</script>
 
-            function closeNav() {
-                document.getElementById("navigation").style.width = "0%";
-            }
-        </script>
-
-        <script src="/js/ChatScript.js"></script>
-
-    </body>
-    <footer>
-        <p>Anmol Vishvas - M00734701 | CST3140 Novel Interaction Technologies CW2</p>
-    </footer>
-
+		<script src="/js/ChatScript.js"></script>
+	</body>
+	<footer>
+		<p>
+			Anmol Vishvas - M00734701 | CST3140 Novel Interaction Technologies CW2
+		</p>
+	</footer>
 </html>
