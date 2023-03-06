@@ -9,6 +9,12 @@ var introduction = [
 	"Hi, how may i help you?",
 ];
 
+var fine = [
+	"I am fine thanks, what about you?",
+	"I am doing well.",
+	"I am doing well, What about you?",
+];
+
 const emailLink = "https://www.outlook.com/live.mdx.ac.uk";
 var email = [
 	"Opening outlook...",
@@ -77,6 +83,27 @@ function chatbotvoice(message) {
 		speech.text = finalresult;
 		window.setTimeout(function () {
 			window.open(emailLink);
+		}, 3000);
+	} else if (
+		message.includes("how are you") ||
+		message.includes("how are you doing")
+	) {
+		let finalresult = fine[Math.floor(Math.random() * fine.length)];
+		speech.text = finalresult;
+	} else if (
+		message.includes("fine")
+	) {
+		let finalresult = "That's great!";
+		speech.text = finalresult;
+	}else if (
+		message.includes("university") ||
+		message.includes("website") ||
+		message.includes("university portal")
+	) {
+		let finalresult = unihub[Math.floor(Math.random() * unihub.length)];
+		speech.text = finalresult;
+		window.setTimeout(function () {
+			window.open(unihubLink);
 		}, 3000);
 	} else if (
 		message.includes("grades") ||
