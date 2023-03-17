@@ -166,6 +166,7 @@ body {
 }
 
 .imessage {
+	overflow-y: scroll;
 	background-color: #fff;
 	border: 1px solid #e5e5ea;
 	border-radius: 0.25rem;
@@ -266,9 +267,8 @@ footer {
 	padding-bottom: 20px;
 }
 
-
 .chatContainer {
-	overflow: auto;
+	/* overflow: auto; */
 	width: 50%;
 	margin: 0 auto;
 	margin-top: 20px;
@@ -278,4 +278,18 @@ footer {
 	padding: 20px;
 	box-shadow: 1px 0 4px hsla(0, 0%, 9%, 0.3);
 	background-color: #f4f4f4;
+}
+
+::-webkit-scrollbar {
+	position: relative;
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #88888800;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 20px;
 }
