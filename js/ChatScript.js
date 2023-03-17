@@ -96,6 +96,7 @@ function showusermsg(usermsg) {
 	let output = "";
 	output += `<p class='from-me'>${usermsg}</p>`;
 	texts.innerHTML += output;
+	chatareaMain.scrollTop = chatareaMain.scrollHeight;
 	return texts;
 }
 
@@ -103,6 +104,7 @@ function showchatbotmsg(chatbotmsg) {
 	let output = "";
 	output += `<p class='from-them'>${chatbotmsg}</p>`;
 	texts.innerHTML += output;
+	chatareaMain.scrollTop = chatareaMain.scrollHeight;
 	return texts;
 }
 
