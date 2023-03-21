@@ -110,7 +110,6 @@ function showchatbotmsg(chatbotmsg) {
 
 function chatbotvoice(message) {
 	const speech = new SpeechSynthesisUtterance();
-	speech.text = "This is a test";
 	if (
 		message.includes("hello") ||
 		message.includes("hi") ||
@@ -186,34 +185,38 @@ function chatbotvoice(message) {
 
 			// Check if the transcript contains a time value
 			if (message.includes("at")) {
-				speech.text = "Time should will be set on google calendar";
-			}
+				speech.text =
+					"Time should will be set on google calendar. I can fill the reminder title for you.";
+				window.speechSynthesis.speak(speech);
+			} else {
+				// Create the reminder object with the title and time properties
+				const reminder = {
+					title: title,
+					time: time,
+				};
 
-			// Create the reminder object with the title and time properties
-			const reminder = {
-				title: title,
-				time: time,
-			};
+				// Store the reminder object in localStorage
+				localStorage.setItem("reminder", JSON.stringify(reminder));
 
-			// Store the reminder object in localStorage
-			localStorage.setItem("reminder", JSON.stringify(reminder));
+				// Check if the time property is a valid date object
+				if (
+					Object.prototype.toString.call(reminder.time) === "[object Date]" &&
+					!isNaN(reminder.time)
+				) {
+					// Generate the calendar URL with the reminder details
+					const start = reminder.time.toISOString();
+					const end = new Date(
+						reminder.time.getTime() + 30 * 60000
+					).toISOString();
+					const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+						reminder.title
+					)}&dates=${start}/${end}&details=${encodeURIComponent(
+						reminder.title
+					)}`;
 
-			// Check if the time property is a valid date object
-			if (
-				Object.prototype.toString.call(reminder.time) === "[object Date]" &&
-				!isNaN(reminder.time)
-			) {
-				// Generate the calendar URL with the reminder details
-				const start = reminder.time.toISOString();
-				const end = new Date(
-					reminder.time.getTime() + 30 * 60000
-				).toISOString();
-				const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-					reminder.title
-				)}&dates=${start}/${end}&details=${encodeURIComponent(reminder.title)}`;
-
-				// Open the calendar URL in a new window
-				window.open(calendarUrl, "_blank");
+					// Open the calendar URL in a new window
+					window.open(calendarUrl, "_blank");
+				}
 			}
 		}
 	} else if (
@@ -308,6 +311,8 @@ function chatbotvoice(message) {
 		message.includes("nav") ||
 		message.includes("help")
 	) {
+		let finalresult = "Opening the help section for you!";
+		speech.text = finalresult;
 		openNav();
 	} else if (message.includes("stop recording") || message.includes("stop")) {
 		let finalresult = stop[Math.floor(Math.random() * stop.length)];
