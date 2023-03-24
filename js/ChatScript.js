@@ -241,7 +241,7 @@ function chatbotvoice(message) {
 	} else if (
 		message.includes("ux") ||
 		message.includes("UX") ||
-		message.includes("user experience") ||
+		message.includes("User experience") ||
 		message.includes("user")
 	) {
 		let finalresult = UX[Math.floor(Math.random() * UX.length)];
@@ -285,11 +285,11 @@ function chatbotvoice(message) {
 		let finalresult =
 			"There are several websites where you can practice Python. Some popular options include: <br>HackerRank (https://www.hackerrank.com/), <br>LeetCode (https://leetcode.com/), <br>Codewars (https://www.codewars.com/), <br>Codecademy (https://www.codecademy.com/), <br>Project Euler (https://projecteuler.net/)";
 		speech.text = finalresult;
-	} else if (message.includes("javascript") || message.includes("javaScript")) {
+	} else if (message.includes("javascript") || message.includes("JavaScript")) {
 		let finalresult =
 			"Here are some websites where you can practice JavaScript:<br>Codecademy: https://www.codecademy.com/learn/introduction-to-javascript, <br>FreeCodeCamp: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/, <br>Codewars: https://www.codewars.com/, <br>HackerRank: https://www.hackerrank.com/domains/javascript";
 		speech.text = finalresult;
-	} else if (message.includes("java")) {
+	} else if (message.includes("java") || message.includes("Java")) {
 		let finalresult =
 			"Here are some resources to practice Java:<br>CodingBat: https://codingbat.com/java, <br>Java Tutorials and Exercises: https://www.w3schools.com/java/exercise.asp,<br>Java Practice Problems: https://www.javatpoint.com/java-practice-problems, <br>Practice-it: https://practiceit.cs.washington.edu/";
 		speech.text = finalresult;
